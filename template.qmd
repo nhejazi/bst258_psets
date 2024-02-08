@@ -92,7 +92,6 @@ packages, `data.table` and `tidyverse`, and set a seed for the PRNG.
 
 ```{r}
 #| label: example-code
-#| eval: false
 library(data.table)
 library(tidyverse)
 set.seed(11249)
