@@ -23,7 +23,7 @@ format:
     # code block options
     code-line-numbers: false
     code-block-bg: false
-    highlight-style: gruvbox
+    highlight-style: nord
 bibliography: refs.bib
 ---
 
@@ -55,18 +55,60 @@ committee" are not acceptable. If you do collaborate with classmates on a
 problem, please list your collaborators on your solution. Similarly, while you
 may find the use of ChatGPT and related tools helpful, disclosing your use of
 them is required to adhere to academic/intellectual honesty.
+
+::: {.callout-warning title="Coding Standards"}
+Make sure to write code that is modular and reusable, making use of functions
+or classes as necessary. Make sure to use variable names that are descriptive
+--- that is, human parse-able (e.g., not `x` or `this_var`) --- while favoring
+conciseness. Write brief documentation for any functions or classes as well as
+any unit tests necessary you deem necessary to ensure that your code is working
+as expected. Finally, make to set a seed for the PRNG so that any random aspects
+of your analysis (e.g., Monte Carlo simulation experiments, sample-splitting)
+are reproducible.
+:::
+
+Remember that \textsf{Quarto} extends markdown, which supports \LaTeX for
+typesetting equations, and also allows for code and analytic results to be
+interspersed in a single document, consistent with literate programming
+principles.
+
+Put your answer in ["callout"
+blocks](https://quarto.org/docs/authoring/callouts.html) like the following
+
+:::{.callout-note title="Answer"}
+Here is my answer. The logic follows, but first I will typeset a definition
+to clarify my point: $P_n f(X) = \frac{1}{n} f(X_i)$.
+
+I can also create "displayed equations," using, e.g., the `align` environment,
+\begin{align*}
+  L &\sim \text{Unif}(-1, 1) \\
+  A &\sim \text{Bern}(0.5) \\
+  Y &\sim \text{N}(\mu = 2 A + 0.5 L, \sigma = 1)
+\end{align*}
+:::
+
+You can also write and run \textsf{R} code. As an example, below, we load two
+packages, `data.table` and `tidyverse`, and set a seed for the PRNG.
+
+```{r}
+#| label: example-code
+#| eval: false
+library(data.table)
+library(tidyverse)
+set.seed(11249)
+```
+
+You may also cite sources from the `refs.bib` file, e.g., @hernan2023causal.
 \normalsize
+
+{{< pagebreak >}}
+
 
 
 ## Question 1
 
 Start answer here
 
-```{r}
-#| label: example-q1
-library(data.table)
-library(tidyverse)
-```
 
 {{< pagebreak >}}
 
