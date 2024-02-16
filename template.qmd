@@ -91,6 +91,7 @@ You can also write and run \textsf{R} code. As an example, below, we load two
 packages, `data.table` and `tidyverse`, and set a seed for the PRNG.
 
 ```{r}
+#| message: false
 #| label: example-code
 library(data.table)
 library(tidyverse)
