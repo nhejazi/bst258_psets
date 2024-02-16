@@ -1,0 +1,51 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+name: Quarto Build PDF
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install System Dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt install -y curl libcurl4-doc libcurl4-openssl-dev \
+            libharfbuzz-dev libfribidi-dev libmagick++-dev libpoppler-cpp-dev
+
+      - name: Install TinyTex
+        run: |
+          quarto install tinytex
+
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release'
+
+      - name: Install R Dependencies
+        uses: r-lib/actions/setup-renv@v2
+
+      - name: Render Only
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          to: pdf
+          path: template.qmd
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: template.pdf
+
