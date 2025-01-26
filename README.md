@@ -1,9 +1,9 @@
 # BST 258 Problem Set Template
 
-This is a template repository for problem sets for the Spring 2024 edition of
-BST 258. As the course progresses, some of our focus will transition to applying
-techniques and tools from statistical causal inference in examples of data
-analysis. Doing so in the real world requires proficiency with the tools
+This is a template repository for problem sets for the Spring 2025 edition of
+BST 258 at HSPH. As the course progresses, some of our focus will transition to
+applying techniques and tools from statistical causal inference in examples of
+data analysis. Doing so in the real world requires proficiency with the tools
 necessary to ensure computationally reproducible results are obtained from code
 produced to implement a given analysis. At a bare minimum, such tools include
 
@@ -38,9 +38,14 @@ $ tree -L 2
 
 3 directories, 6 files
 ```
-which includes an `renv` directory (and associated `.Rprofile`); a `Quarto`
-file `template.qmd` with corresponding BibTeX database `refs.bib`; and a few
-hidden files (like `.here` from the [`here` R package](https://here.r-lib.org/)
-and `.gitignore`) and directories (like `.git`). It is important that you
-familiarize yourself with these tools, including their basic anatomy.
 
+The above includes an `renv` subdirectory (and associated `.Rprofile`), a
+Quarto file `template.qmd` with corresponding BibTeX database `refs.bib`, and a
+few hidden files (like `.here` from the [`here` R
+package](https://here.r-lib.org/) and `.gitignore`) and auxiliary directories
+(like `.git`). *It is important that you familiarize yourself with these tools,
+including their basic anatomy.*
+
+For some perspective on why one might adopt such a setup, consider reading
+[this brief piece](https://doi.org/10.1093/biostatistics/kxq028) by David
+Donoho.
