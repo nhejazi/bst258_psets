@@ -21,9 +21,7 @@ format:
     fig-asp: 0.618
     fig-cap-location: bottom
     # code block options
-    code-line-numbers: false
-    code-block-bg: false
-    highlight-style: nord
+    code-line-numbers: true
 bibliography: refs.bib
 ---
 
@@ -31,12 +29,6 @@ bibliography: refs.bib
 #| echo: false
 #| message: false
 #| label: global-setup
-# NOTE: The immediately following line loads an renv environment located at the
-#       nearest "top-level" directory, as marked by a `.here` file, which is
-#       located by the here::here() function. This would be a useful tool if,
-#       say, this template.qmd file was not located at the top-level directory.
-#       Here, renv should activate automatically when this file is opened.
-#renv::load(here::here())
 library(here)
 ```
 
@@ -61,10 +53,10 @@ Make sure to write code that is modular and reusable, making use of functions
 or classes as necessary. Make sure to use variable names that are descriptive
 --- that is, human parse-able (e.g., not `x` or `this_var`) --- while favoring
 conciseness. Write brief documentation for any functions or classes as well as
-any unit tests necessary you deem necessary to ensure that your code is working
-as expected. Finally, make to set a seed for the PRNG so that any random aspects
-of your analysis (e.g., Monte Carlo simulation experiments, sample-splitting)
-are reproducible.
+any unit tests necessary to ensure that your code is working as expected.
+Finally, make to set a seed for the PRNG so that any random aspects of your
+analysis (e.g., Monte Carlo simulation experiments, sample-splitting) are
+reproducible.
 :::
 
 Remember that \textsf{Quarto} extends markdown, which supports \LaTeX for
@@ -79,7 +71,8 @@ blocks](https://quarto.org/docs/authoring/callouts.html) like the following
 Here is my answer. The logic follows, but first I will typeset a definition
 to clarify my point: $P_n f(X) = \frac{1}{n} f(X_i)$.
 
-I can also create "displayed equations," using, e.g., the `align` environment,
+I can also create "displayed equations", using, e.g., the `align` environment
+(as below) or fencing within `$$` blocks.
 \begin{align*}
   L &\sim \text{Unif}(-1, 1) \\
   A &\sim \text{Bern}(0.5) \\
@@ -102,7 +95,6 @@ You may also cite sources from the `refs.bib` file, e.g., @hernan2023causal.
 \normalsize
 
 {{< pagebreak >}}
-
 
 
 ## Question 1
