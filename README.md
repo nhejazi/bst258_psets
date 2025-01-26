@@ -25,21 +25,42 @@ produced to implement a given analysis. At a bare minimum, such tools include
 Note the directory structure of this repository
 
 ```{sh}
-$ tree -L 2
+❯ tree -a -L 2 --noreport
 .
+├── .Rprofile
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── FETCH_HEAD
+│   ├── HEAD
+│   ├── MERGE_RR
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   ├── index
+│   ├── info
+│   ├── logs
+│   ├── objects
+│   ├── packed-refs
+│   ├── refs
+│   └── rr-cache
+├── .github
+│   ├── .gitignore
+│   └── workflows
+├── .gitignore
+├── .here
 ├── README.md
 ├── refs.bib
 ├── renv
+│   ├── .gitignore
 │   ├── activate.R
 │   ├── library
-│   └── settings.json
+│   ├── settings.json
+│   └── staging
 ├── renv.lock
 └── template.qmd
-
-3 directories, 6 files
 ```
 
-The above includes an `renv` subdirectory (and associated `.Rprofile`), a
+The above includes a `renv` subdirectory (and associated `.Rprofile`), a
 Quarto file `template.qmd` with corresponding BibTeX database `refs.bib`, and a
 few hidden files (like `.here` from the [`here` R
 package](https://here.r-lib.org/) and `.gitignore`) and auxiliary directories
